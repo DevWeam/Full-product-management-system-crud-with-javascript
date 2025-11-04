@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full product management system crud with javascript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h1>Hospital Billing Management System</h1>
+      </div>
+
+      <div class="inputs">
+        <input type="number" id="room_nu" placeholder="Room number" />
+        <input type="text" id="name" placeholder="Patient Name" />
+
+        <div class="price">
+          <input onkeyup="getTotal()"  type="number" id="room_fee"  placeholder="Room Fee" />
+          <input onkeyup="getTotal()" type="number" id="nights_nu" placeholder="Number of nights" />
+          <input onkeyup="getTotal()" type="number" id="doctor_fee" placeholder="Doctor Fee"  />
+          <input  onkeyup="getTotal()" type="number" id="service" placeholder="Service" />
+          <small id="total"></small>
+        </div>
+        <button id="submit">Create</button>
+      </div>
+
+      <div class="outputs">
+        <div class="searchBlock">
+          <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search" />
+          <div class="btnSearch">
+            <button onclick="getSearchMood(this.id)" id="searchName">Search By Patient Name</button>
+            <button onclick="getSearchMood(this.id)" id="searchNumber">Search By Room Number</button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <table>
+          <tr>
+            <th>Room_nu</th>
+            <th>Name</th>
+            <th>Room_Fee</th>
+            <th>Nights_nu</th>
+            <th>Doctor_Fee</th>
+            <th>Service</th>
+            <th>total</th>
+          </tr>
+
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
